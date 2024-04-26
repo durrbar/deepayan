@@ -6,6 +6,7 @@ import ApplicationLogo from "@/Components/ApplicationLogo";
 import DarkModeToggle from "@/Components/DarkModeToggle";
 import MainNavbar from "./MainNavbar";
 import { mainNavConfig } from "@/constants/mainNavConfig";
+import DonateButton from "@/Components/DonateButton";
 
 interface NavItemPropsType {
     label: string;
@@ -44,7 +45,7 @@ export function NavbarWithSimpleLinks() {
 
     return (
         <>
-            <nav className="block min-w-full container max-w-screen-xl px-4 py-2 mx-auto text-black bg-white dark:bg-slate-800 bg-opacity-90 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+            <nav className="block min-w-full container max-w-screen-xl px-4 py-2 mx-auto text-black bg-white dark:bg-slate-900/75 bg-opacity-70 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4 fixed z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
                 <div className="container flex items-center justify-between mx-auto text-blue-gray-900">
                     <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
                         <div className="shrink-0 flex items-center">
@@ -57,9 +58,7 @@ export function NavbarWithSimpleLinks() {
                                 <MainNavbar menuItems={mainNavConfig} />
                             </div>
                             <DarkModeToggle />
-                            <button className="hidden lg:block rounded-full align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-blue-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-blue-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
-                                Donate
-                            </button>
+                            <DonateButton className="hidden lg:block" />
                             <button
                                 onClick={handleOpen}
                                 className="ml-auto inline-block text-blue-gray-900 lg:hidden"
@@ -83,12 +82,7 @@ export function NavbarWithSimpleLinks() {
             {open && (
                 <div className="rounded-xl bg-white text-black dark:bg-slate-600 py-2 px-4 bg-opacity-90 fixed z-30 w-full mt-14">
                     <NavList />
-                    <button
-                        className="mb-2 rounded-full align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 bg-blue-900 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-blue-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
-                        color="blue"
-                    >
-                        Donate
-                    </button>
+                    <DonateButton />
                 </div>
             )}
         </>

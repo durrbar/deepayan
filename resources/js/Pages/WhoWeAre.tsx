@@ -10,7 +10,7 @@ export default function WhoWeAre() {
         <MainLayout>
             <Head title="Who Are We" />
 
-            <section className="min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden bg-gray-100 py-16 shadow-lg md:py-20 xl:py-48">
+            <section className="min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden bg-gray-100 py-16 md:py-20 xl:py-48">
                 <img
                     src="/assets/uploads/WhatsApp-Image-2022-03-29-at-11.04.46-AM.jpeg"
                     loading="lazy"

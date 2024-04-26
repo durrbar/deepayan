@@ -1,3 +1,5 @@
+import SectionTitle from "@/Components/SectionTitle";
+
 export default function HomeSpeech() {
     return (
         <section className="bg-white dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 shadow-lg md:py-10 xl:py-24">
@@ -8,18 +10,13 @@ export default function HomeSpeech() {
                 className="absolute inset-0 h-full w-full object-cover object-center  blur-sm"
             />
 
-            {/* <div className="absolute inset-0 bg-black  opacity-75"></div> */}
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 from-10% via-purple-500 via-30% to-pink-500 to-90% mix-blend-normal opacity-55 dark:opacity-75"></div>
+
+            <div className="absolute inset-0 dark:bg-black/70 bg-black/20 opacity-75"></div>
             <>
-                <div className="flex flex-col">
-                    <div className="text-center relative mb-5">
-                        <h2 className="font-bold text-4xl text-black">
-                            কিছু কথা
-                        </h2>
-                        <div className="flex justify-center items-center">
-                            <hr className="my-6 w-2/6  h-2 border-t-0 bg-transparent bg-gradient-to-r from-transparent via-blue-900 to-transparent opacity-75 dark:via-amber-400" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col md:flex-row relative max-w-screen-xl px-4 my-10 py-8 gap-6 justify-between">
+                <div className="flex flex-col relative">
+                    <SectionTitle title="কিছু কথা" />
+                    <div className="flex flex-col md:flex-row relative max-w-screen-xl dark:text-white text-black px-4 my-10 py-8 gap-6 justify-between">
                         <blockquote className="font-bold text-xl">
                             <svg
                                 className="w-14 h-14 text-amber-500 dark:text-amber-600 my-4"

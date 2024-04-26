@@ -1,78 +1,78 @@
 export const mainNavConfig = [
     {
         label: "Home",
-        link: "/",
+        link: "root.home",
     },
     {
         label: "Who We Are",
-        link: "/who-we-are",
+        link: "root.whoWeAre",
     },
     {
         label: "What We Do",
-        link: "/what-we-do",
+        link: "root.whatWeDo",
     },
     {
         label: "Projects",
-        link: "#",
+        link: "#project",
         children: [
             {
                 label: "Self Employment Project",
-                link: "/",
+                link: "root.project.maintenance",
             },
             {
                 label: "Food Distribution Project",
-                link: "/who-we-are",
+                link: "root.project.maintenance",
             },
             {
                 label: "Deepayan Arragya Project",
-                link: "/project/arraggya",
+                link: "root.project.arraggya",
             },
             {
                 label: "Deepayan Arayanna Project",
-                link: "/contact-us",
+                link: "root.project.maintenance",
             },
             {
                 label: "Deepayan Asram Project",
-                link: "/contact-us",
+                link: "root.project.maintenance",
             },
             {
                 label: "Deepayan Bondhu Project",
-                link: "/contact-us",
+                link: "root.project.maintenance",
             },
             {
                 label: "Education For A Better Tomorrow Project",
-                link: "/contact-us",
+                link: "root.project.maintenance",
             },
             {
                 label: "Clean Water And Sanitation Project",
-                link: "/contact-us",
+                link: "root.project.maintenance",
             },
             {
                 label: "Kurbani Project",
-                link: "/project/kurbani",
+                link: "root.project.kurbani",
             },
         ],
     },
-    // {
-    //     label: "Courses",
-    //     link: "#",
-    //     children: [
-    //         {
-    //             label: "Pre-Marriage Course",
-    //             link: "/",
-    //         },
-    //         {
-    //             label: "Smart Parenting Course",
-    //             link: "/who-we-are",
-    //         },
-    //         {
-    //             label: "Internship",
-    //             link: "/what-we-do",
-    //         },
-    //     ],
-    // },
+    {
+        label: "Courses",
+        link: "#",
+        children: [
+            {
+                label: "Pre-Marriage Course",
+                link: "root.course.preMarriage",
+            },
+            {
+                label: "Smart Parenting Course",
+                link: "root.course.smartParenting",
+            },
+            {
+                label: "Internship",
+                link: "root.course.internship",
+            },
+        ],
+    },
     {
         label: "Contact Us",
-        link: "/contact-us",
+        link: "root.contact",
     },
 ];

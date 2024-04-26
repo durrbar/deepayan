@@ -1,44 +1,45 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RootController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::name('root.')->group(function () {
+    Route::controller(RootController::class)->group(function () {
 
-Route::get('/what-we-do', function () {
-    return Inertia::render('WhatWeDo');
-});
+        Route::get('/', 'home')->name('home');
 
-Route::get('/who-we-are', function () {
-    return Inertia::render('WhoWeAre');
-});
+        Route::get('/what-we-do', 'whatwedo')->name('whatWeDo');
 
-Route::get('/contact-us', function () {
-    return Inertia::render('Contact');
-});
+        Route::get('/who-we-are', 'whoweare')->name('whoWeAre');
 
-Route::prefix('project')->group(function () {
-    Route::get('/arraggya', function () {
-        return Inertia::render('Project/Arraggya');
+        Route::get('/contact-us', 'contact')->name('contact');
     });
 
-    Route::get('/kurbani', function () {
-        return Inertia::render('Project/Kurbani');
+    Route::prefix('project')->name('project.')->controller(ProjectController::class)->group(function () {
+        Route::get('/arraggya', 'arraggya')->name('arraggya');
+
+        Route::get('/kurbani', 'kurbani')->name('kurbani');
+
+        Route::get('/maintenance', 'arraggya')->name('maintenance');
+    });
+
+    Route::prefix('course')->name('course.')->controller(CourseController::class)->group(function () {
+        Route::get('/pre-marriage', 'preMarriage')->name('preMarriage');
+        Route::get('/smart-parenting', 'smartParenting')->name('smartParenting');
+        Route::get('/internship', 'internship')->name('internship');
     });
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
+    Route::controller(DashboardController::class)->group(function () {
+
+        Route::get('/', 'dashboard')->name('home');
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -46,4 +47,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
+Route::prefix('auth')->group(function () {
+    require __DIR__ . '/auth.php';
+});

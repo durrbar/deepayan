@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear();
 
 export default function MainFooter() {
     return (
-        <footer className="px-8 py-14 dark:bg-slate-400">
+        <footer className="px-8 py-14 bg-white dark:bg-gray-400 bg-opacity-90">
             <div className="container mx-auto flex flex-col items-center">
                 <div className="flex flex-wrap items-center justify-center gap-8 pb-8">
                     {footerLinks.map(({ link, label }, index) => (

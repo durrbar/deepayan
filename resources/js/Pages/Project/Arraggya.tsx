@@ -5,27 +5,22 @@ import OurGoal from "@/Sections/Common/OurGoal";
 import GetDonate from "@/Sections/Common/GetDonate";
 import OurSupporters from "@/Sections/Common/OurSupporters";
 import { arraggyaImages } from "@/constants/arraggya";
+import DonateButton from "@/Components/DonateButton";
+import SectionTitle from "@/Components/SectionTitle";
+import ImageGrid from "@/Sections/Common/ImageGrid";
 
 export default function ProjectArraggya() {
     return (
         <MainLayout>
             <Head title="Araggya Project" />
 
-            <section className="bg-white dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 mt-12 shadow-lg md:py-10 xl:py-24">
-                <div className="absolute inset-0 bg-black  opacity-55"></div>
+            <section className="bg-gray-100 dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 mt-12 md:py-10 xl:py-24">
                 <>
                     <div className="flex flex-col relative">
-                        <div className="text-center">
-                            <h2 className="font-bold text-4xl text-black dark:text-white opacity-100 z-10">
-                                প্রজেক্ট আরোগ্য
-                            </h2>
-                            <div className="flex justify-center items-center">
-                                <hr className="my-6 w-2/6  h-2 border-t-0 bg-transparent bg-gradient-to-r from-transparent via-blue-900 to-transparent opacity-75 dark:via-amber-400" />
-                            </div>
-                        </div>
+                        <SectionTitle title="প্রজেক্ট আরোগ্য" />
                         <div className="flex flex-col  md:flex-row relative max-w-screen-xl px-4 py-8 gap-10  lg:grid-cols-12">
                             <div className="mr-auto max-w-lg place-self-center lg:col-span-6">
-                                <h6 className="max-w-2xl mb-6 font-light text-white lg:mb-8 ">
+                                <h6 className="max-w-2xl mb-6 font-light text-black dark:text-white lg:mb-8 ">
                                     সুস্বাস্থ্য ও সুস্থতা মহান সৃষ্টিকর্তার পক্ষ
                                     থেকে সমগ্র মানবজাতির উপরে একটি নিয়ামত
                                     স্বরূপ। এই নিয়ামত এর অভাব আমরা অক্ষরে অক্ষরে
@@ -53,9 +48,7 @@ export default function ProjectArraggya() {
                                     দৃঢ় প্রত্যয়ে আপনাকে স্বাগতম।
                                 </h6>
 
-                                <button className="hidden lg:block rounded-full align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3.5 px-7 bg-blue-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-blue-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
-                                    Donate
-                                </button>
+                                <DonateButton />
                             </div>
                             <div className="lg:ml-2.5 lg:mt-0 lg:col-span-6 lg:flex">
                                 <img
@@ -69,23 +62,7 @@ export default function ProjectArraggya() {
                 </>
             </section>
 
-            <section className="py-16 px-8 bg-gray-300">
-                <div className="mx-auto container ">
-                    <div className="py-6">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {arraggyaImages.map((image, index) => (
-                                <div key={index}>
-                                    <img
-                                        className="h-auto max-w-full aspect-[4/3] rounded-lg"
-                                        src={image}
-                                        alt={image}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ImageGrid images={arraggyaImages} />
 
             <OurSupporters />
 

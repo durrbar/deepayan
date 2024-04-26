@@ -5,14 +5,15 @@ import { MainLayout } from "@/Layouts/Main";
 import GetDonate from "@/Sections/Common/GetDonate";
 
 import { kurbaniImages } from "@/constants/kurbani";
+import DonateButton from "@/Components/DonateButton";
+import ImageGrid from "@/Sections/Common/ImageGrid";
 
 export default function ProjectKurbani() {
     return (
         <MainLayout>
             <Head title="Kurbani Project" />
 
-            <section className="bg-white dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 mt-12 shadow-lg md:py-10 xl:py-24">
-                <div className="absolute inset-0 bg-black  opacity-55"></div>
+            <section className="bg-gray-50 dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 mt-12 md:py-10 xl:py-24">
                 <>
                     <div className="flex flex-col relative">
                         <div className="text-center">
@@ -32,7 +33,7 @@ export default function ProjectKurbani() {
                                 />
                             </div>
                             <div className="mr-auto max-w-lg place-self-center lg:col-span-6">
-                                <h6 className="max-w-2xl mb-6 font-light text-white lg:mb-8 ">
+                                <h6 className="max-w-2xl mb-6 font-medium dark:text-white text-black lg:mb-8 ">
                                     কুরবানী,মহান আল্লাহর সন্তুষ্টি লাভের উদ্দেশে
                                     সামর্থবান মুসলিম বান্দাহর উপরে অসহায় বান্দার
                                     হক , কিন্তু কালের বিবর্তনে এই উৎসবটি নতুন
@@ -49,32 +50,14 @@ export default function ProjectKurbani() {
                                     মুখে।
                                 </h6>
 
-                                <button className="hidden lg:block rounded-full align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3.5 px-7 bg-blue-500 text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-blue-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none">
-                                    Donate
-                                </button>
+                                <DonateButton />
                             </div>
                         </div>
                     </div>
                 </>
             </section>
 
-            <section className="py-16 px-8 bg-gray-300">
-                <div className="mx-auto container ">
-                    <div className="py-6">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {kurbaniImages.map((image, index) => (
-                                <div key={index}>
-                                    <img
-                                        className="h-auto max-w-full aspect-[4/3] rounded-lg"
-                                        src={image}
-                                        alt={image}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <ImageGrid images={kurbaniImages} />
 
             <GetDonate />
         </MainLayout>

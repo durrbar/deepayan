@@ -1,3 +1,5 @@
+import SectionTitle from "@/Components/SectionTitle";
+
 export default function HomeVision() {
     return (
         <section className="bg-white dark:bg-gray-900 min-h-full relative flex flex-1 shrink-0 items-center justify-center overflow-hidden py-8 shadow-lg md:py-10 xl:py-24">
@@ -8,20 +10,14 @@ export default function HomeVision() {
                 className="absolute inset-0 h-full w-full object-cover object-center opacity-50 blur-sm"
             />
 
-            <div className="absolute inset-0 bg-black  opacity-55"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 from-10% via-purple-500 via-30% to-pink-500 to-90% mix-blend-normal opacity-55 dark:opacity-65"></div>
+
             <>
                 <div className="flex flex-col relative">
-                    <div className="text-center">
-                        <h2 className="font-bold text-4xl text-black dark:text-white opacity-100 z-10">
-                            আমাদের লক্ষ্য
-                        </h2>
-                        <div className="flex justify-center items-center">
-                            <hr className="my-6 w-2/6  h-2 border-t-0 bg-transparent bg-gradient-to-r from-transparent via-blue-900 to-transparent opacity-75 dark:via-amber-400" />
-                        </div>
-                    </div>
+                    <SectionTitle title="আমাদের লক্ষ্য" />
                     <div className="flex flex-col md:flex-row relative max-w-screen-xl px-4 py-8 gap-6  lg:grid-cols-12">
                         <div className="mr-auto place-self-center lg:col-span-6">
-                            <h6 className="max-w-2xl mb-6 font-light text-white lg:mb-8  ">
+                            <h6 className="max-w-2xl mb-6  text-black dark:text-white lg:mb-8  ">
                                 <strong className="font-bold">
                                     “ক্ষুধার রাজ্যে পৃথিবী গদ্যময়,পূর্ণিমা চাঁদ
                                     যেন ঝলসানো রুটি”
@@ -34,7 +30,7 @@ export default function HomeVision() {
                                 কোনো বিকল্প নেই।
                             </h6>
 
-                            <h6 className="max-w-2xl mb-6 font-light text-white lg:mb-8 ">
+                            <h6 className="max-w-2xl mb-6  text-black dark:text-white lg:mb-8 ">
                                 আমরা বিশ্বাস করি প্রতিটা মানুষ তাদের মৌলিক
                                 অধিকার নিয়ে বাঁচার অধিকার রাখে, বাংলাদেশ এর ২০.৫
                                 শতাংশ মানুষ যারা দারিদ্রসীমার নিচে বসবাস করেন
@@ -44,7 +40,7 @@ export default function HomeVision() {
                                 ফাউন্ডেশন এর যাত্রা শুরু হয় ২০১৭ সাল থেকে
                             </h6>
 
-                            <h6 className="max-w-2xl mb-6 font-light text-white lg:mb-8 ">
+                            <h6 className="max-w-2xl mb-6  text-black dark:text-white lg:mb-8 ">
                                 আমাদের এই ক্ষুদ্র প্রয়াসে আপনাদের আগ্রহ ও
                                 সহযোগিতা একান্ত কাম্য। স্বপ্নের সেই সোনার বাংলা
                                 গড়ার যাত্রায় আপনার অপেক্ষায় আমরা।
@@ -54,7 +50,7 @@ export default function HomeVision() {
                             <img
                                 className="rounded-lg"
                                 src="/assets/uploads/WhatsApp-Image-2022-03-29-at-11.19.24-AM-1024x768.jpeg"
-                                alt="mockup"
+                                alt="WhatsApp-Image-2022-03-29-at-11.19.24-AM-1024x768.jpeg"
                             />
                         </div>
                     </div>

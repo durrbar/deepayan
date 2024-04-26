@@ -8,13 +8,13 @@ interface ReviewCardPropsType {
 
 export function CardReview({ heading, image, details }: ReviewCardPropsType) {
     return (
-        <div className="flex-col bg-clip-border bg-transparent text-gray-700 shadow-md relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
+        <div className="flex-col bg-clip-border bg-transparent text-gray-700 shadow-md shadow-blue-500/80 dark:shadow-blue-900/80 relative grid min-h-[30rem] items-end overflow-hidden rounded-xl">
             <img
                 src={image}
                 alt={heading}
                 className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
             <div className="p-6 relative flex flex-col justify-end">
                 <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-white">
                     {heading}
@@ -29,7 +29,7 @@ export function CardReview({ heading, image, details }: ReviewCardPropsType) {
 
 export default function OurWorkPart() {
     return (
-        <section className="py-20 px-8 bg-slate-300 dark:bg-slate-800">
+        <section className="py-20 px-8 bg-gradient-to-r from-indigo-500/50 dark:from-indigo-500/65 via-purple-500/50 dark:via-purple-500/65 to-pink-500/50 dark:to-pink-500/65 bg-blend-overlay">
             <div className="mx-auto container">
                 <div className="text-center">
                     <h2 className="font-bold text-4xl text-black dark:text-white">

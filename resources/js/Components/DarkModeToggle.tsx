@@ -22,12 +22,12 @@ const DarkModeToggle = () => {
         const newDarkMode = !darkMode;
         setDarkMode(newDarkMode);
         localStorage.setItem("darkMode", String(newDarkMode));
-        document.documentElement.classList.toggle("dark", newDarkMode); // Add 'dark' class to <html> element
+        document.documentElement.classList.toggle("dark", newDarkMode);
     };
 
     return (
         <button
-            className="p-2 rounded-full focus:outline-none bg-slate-400 dark:bg-slate-600 text-black dark:text-amber-300 bg-opacity-60"
+            className="p-2 rounded-full focus:outline-none hover:bg-slate-100/100 dark:hover:bg-slate-700/30 text-black dark:text-amber-300"
             onClick={toggleDarkMode}
         >
             {darkMode ? (
